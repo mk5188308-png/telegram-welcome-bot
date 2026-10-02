@@ -1,4 +1,3 @@
-
 const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
@@ -51,18 +50,18 @@ const DEFAULT_SETTINGS = {
     profile_photo_enabled: true,
     message_order: "welcome_first", // "welcome_first" অথবা "media_first"
     channel_title: "SOHEL VAI OFFICIAL CHANNEL",
-    welcome_text: `👋 👤 {first_name} ⸙ 🇧🇩
+    welcome_text: `👋 🤖 {first_name} স্বাগতম 🇮🇳
 
-🎉 আপনাকে স্বাগতম!
-👑 SOHEL VAI OFFICIAL CHANNEL JOIN করার জন্য 💖
+📌 পরিচিতি এবং শর্তাবলি!
+👑 SOHEL VAI OFFICIAL CHANNEL JOIN করতে হবে 🎁
 
-❤️ আসসালামু আলাইকুম প্রিয় ভাই ❤️
-আমাদের Official Channel-এ Join করার জন্য আপনাকে আন্তরিক ধন্যবাদ।
+⚠️⚡️ এই চ্যানেলটি শুধুমাত্র ফ্রিয়ান্স ট্রায়াল ⚡️⚠️
+আমাদের Official Channel-এ Join করতে হবে আপনারা অধিক সচেতন হবেনঅটোমেশন
 
-প্রিয় ভাই আমাদের সাথেই থাকুন আশা করি কোন না কোন একদিন অবশ্যই আপনার উপকারে আসবোই ইনশাআল্লাহ 🥰
+প্রাইম ৩য় পক্ষ আপনার আমাদের সলূশন প্রিভিউ করা না বা অন্য কোনো কোনো প্ল্যাটফর্মেরর মাধ্যমে আপনার সরাসরি ইন্টারঅ্যাকশন প্রদান করতে পারে 🛠️
 
-📢 নিয়মিত নতুন Update পেতে আমাদের সাথে থাকুন।🫶😘
-👑 — SOHEL VAI — 👑`,
+আইনি বিবেচনা আপডেট করতে আমাদের সলূশন প্রিভিউ করা নিশ্চিত করূনসার্ভিসট্রেপ 🥳
+👑 স্টক — SOHEL VAI — 👑`,
 
     welcome_text_size: "bold", // "normal", "bold", "code"
     duration: 30,
@@ -73,18 +72,18 @@ const DEFAULT_SETTINGS = {
     audio_file_id: "",
     audio_filename: "",
     audio_url: "",
-    voice_text: "🎶 গুরুত্বপূর্ণ ভয়েস শুনুন 🎵🎵",
-    voice_button_text: "🎶🎶 𝗢𝗣𝗘𝗡 𝗩𝗢𝗜𝗖𝗘 🎵🎵",
+    voice_text: "🎵 প্রোডাক্টসট্রেম হাইয়েস্ট সিকিউরিটি 🎵🎵",
+    voice_button_text: "🎵🎵 📞📞📞📞 📞📞📞📞📞 🎵🎵",
 
     main_buttons: [
-        { enabled: true, text: "👑 𝗩𝗜𝗣 𝗚𝗥𝗢𝗨𝗣 𝗙𝗔𝗦𝗧 𝗝𝗢𝗜𝗡 👑", url: "https://t.me/+WZR7nsATt1szNmRh" },
-        { enabled: true, text: "😈 𝗔𝗜 HACK 𝐋𝐈𝐍𝐊 𝐎𝐏𝐄𝐍 😈", url: "https://t.me/sohel_ai_prediction_bot" },
-        { enabled: true, text: "💬 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 𝗔𝗗𝗠𝗜𝗡 ☎️", url: "https://t.me/TRADER_SOHEL_BDT_TOP" }
+        { enabled: true, text: "👑 📞📞📞 📞📞📞📞 📞📞📞📞📞 📞📞📞 👑", url: "https://t.me/+WZR7nsATt1szNmRh" },
+        { enabled: true, text: "⚡ 📞📞 HACK 📞📞📞📞 📞📞📞📞 ⚡", url: "https://t.me/sohel_ai_prediction_bot" },
+        { enabled: true, text: "🎯 📞📞📞📞📞📞📞 📞📞📞📞📞 🚀👁️‍🗨️", url: "https://t.me/TRADER_SOHEL_BDT_TOP" }
     ],
 
     video_buttons: [
-        { enabled: true, text: "🔵 𝗕𝗗𝗪𝗜𝗡𝟮𝟰 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗝𝗢𝗜𝗡🎰", url: "https://t.me/+gNZZwOIN72BjYzQ1" },
-        { enabled: true, text: "🟡 𝐃𝐊𝐖𝐈𝐍 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗖𝗵𝗮𝗻𝗧𝗡𝗘𝗟 𝗝𝗎𝗈𝗜𝗡🎰", url: "https://t.me/EARNING_TEME_bd" }
+        { enabled: true, text: "🎵 📞📞📞📞📞📞 📞📞📞📞📞📞📞 📞📞📞📞📞📞📞📞📞📞", url: "https://t.me/+gNZZwOIN72BjYzQ1" },
+        { enabled: true, text: "🎭 📞📞📞📞📞 📞📞📞📞📞📞📞 📞📞📞📞📞📞📞 📞📞📞📞📞📞📞📞📞", url: "https://t.me/EARNING_TEME_bd" }
     ]
 };
 
@@ -243,7 +242,7 @@ app.post("/api/settings", checkAdmin, function(req, res) {
 
 app.post("/api/upload", checkAdmin, upload.single("file"), async function(req, res) {
     try {
-        if (!req.file) return res.status(400).json({ ok: false, error: "File select করুন" });
+        if (!req.file) return res.status(400).json({ ok: false, error: "File select করো" });
         const type = String(req.body.media_type || "").toLowerCase();
         if (type !== "video" && type !== "audio") {
             return res.status(400).json({ ok: false, error: "Invalid media type" });
@@ -455,7 +454,7 @@ async function sendWelcome(user) {
     const photoId = settings.profile_photo_enabled ? await getProfilePhotoFileId(userId) : null;
 
     try {
-        // ১. যদি এডমিন প্যানেল থেকে media_first সিলেক্ট করা থাকে
+        // ১. যদি মিডিয়া প্রথমে পাঠানোর অর্ডার করা হয়
         if (settings.message_order === "media_first") {
             if (videoSource) {
                 const vMsg = await sendWelcomeVideo(videoSource, mediaButtons);
@@ -473,7 +472,7 @@ async function sendWelcome(user) {
             }
             if (welcomeMsg) sent.push(welcomeMsg);
         } 
-        // ২. ডিফল্ট বা welcome_first (প্রথমে ওয়েলকাম মেসেজ, পরে ভিডিও/অডিও)
+        // ২. নরমাল বা welcome_first (ওয়েলকাম টেক্সট সবার আগে, পরে ভিডিও/অডিও)
         else {
             let welcomeMsg = null;
             if (photoId) {
@@ -507,7 +506,7 @@ app.get("/welcome_test", checkAdmin, async function(req, res) {
     try {
         const userId = Number(req.query.user_id || "");
         if (!userId) {
-            return res.status(400).json({ ok: false, error: "user_id দিন" });
+            return res.status(400).json({ ok: false, error: "user_id দাও" });
         }
         const user = { id: userId, first_name: "Test User" };
         await sendWelcome(user);
