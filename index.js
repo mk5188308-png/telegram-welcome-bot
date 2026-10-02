@@ -1,4 +1,3 @@
-
 const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
@@ -51,18 +50,18 @@ const DEFAULT_SETTINGS = {
     profile_photo_enabled: true,
     message_order: "welcome_first", // "welcome_first" অথবা "media_first"
     channel_title: "SOHEL VAI OFFICIAL CHANNEL",
-    welcome_text: `👋 🤖 {first_name} স্বাগতম 🇮🇳
+    welcome_text: `👋  {first_name} 
 
-📌 পরিচিতি এবং শর্তাবলি!
-👑 SOHEL VAI OFFICIAL CHANNEL JOIN করতে হবে 🎁
+🎉 আপনাকে স্বাগতম!
+👑 SOHEL VAI OFFICIAL CHANNEL JOIN করার জন্য 💖
 
-⚠️⚡️ এই চ্যানেলটি শুধুমাত্র ফ্রিয়ান্স ট্রায়াল ⚡️⚠️
-আমাদের Official Channel-এ Join করতে হবে আপনারা অধিক সচেতন হবেনঅটোমেশন
+❤️ আসসালামু আলাইকুম প্রিয় ভাই ❤️
+আমাদের Official Channel-এ Join করার জন্য আপনাকে আন্তরিক ধন্যবাদ।
 
-প্রাইম ৩য় পক্ষ আপনার আমাদের সলূশন প্রিভিউ করা না বা অন্য কোনো কোনো প্ল্যাটফর্মেরর মাধ্যমে আপনার সরাসরি ইন্টারঅ্যাকশন প্রদান করতে পারে 🛠️
+প্রিয় ভাই আমাদের সাথেই থাকুন আশা করি কোন না কোন একদিন অবশ্যই আপনার উপকারে আসবোই ইনশাআল্লাহ 🥰
 
-আইনি বিবেচনা আপডেট করতে আমাদের সলূশন প্রিভিউ করা নিশ্চিত করূনসার্ভিসট্রেপ 🥳
-👑 স্টক — SOHEL VAI — 👑`,
+📢 নিয়মিত নতুন Update পেতে আমাদের সাথে থাকুন।🫶😘
+👑 — SOHEL VAI — 👑`,
 
     welcome_text_size: "bold", // "normal", "bold", "code"
     duration: 30,
@@ -73,18 +72,18 @@ const DEFAULT_SETTINGS = {
     audio_file_id: "",
     audio_filename: "",
     audio_url: "",
-    voice_text: "🎵 প্রোডাক্টসট্রেম হাইয়েস্ট সিকিউরিটি 🎵🎵",
+    voice_text: "🎙️🎙️ গুরুত্বপূর্ণ ভয়েস শুনুন 🎵🎵",
     voice_button_text: "🎵🎵 📞📞📞📞 📞📞📞📞📞 🎵🎵",
 
     main_buttons: [
-        { enabled: true, text: "👑 📞📞📞 📞📞📞📞 📞📞📞📞📞 📞📞📞 👑", url: "https://t.me/+WZR7nsATt1szNmRh" },
-        { enabled: true, text: "⚡ 📞📞 HACK 📞📞📞📞 📞📞📞📞 ⚡", url: "https://t.me/sohel_ai_prediction_bot" },
-        { enabled: true, text: "🎯 📞📞📞📞📞📞📞 📞📞📞📞📞 🚀👁️‍🗨️", url: "https://t.me/TRADER_SOHEL_BDT_TOP" }
+        { enabled: true, text: "👑 𝗩𝗜𝗣 𝗚𝗥𝗢𝗨𝗣 𝗙𝗔𝗦𝗧 𝗝𝗢𝗜𝗡 👑", url: "https://t.me/+WZR7nsATt1szNmRh" },
+        { enabled: true, text: "😈 𝗔𝗜 𝗛𝗔𝗖𝗞 𝐋𝐈𝐍𝐊 𝐎𝐏𝐄𝐍 😈", url: "https://t.me/sohel_ai_prediction_bot" },
+        { enabled: true, text: "💬 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 𝗔𝗗𝗠𝗜𝗡 ☎️", url: "https://t.me/TRADER_SOHEL_BDT_TOP" }
     ],
 
     video_buttons: [
-        { enabled: true, text: "🎵 📞📞📞📞📞📞 📞📞📞📞📞📞📞 📞📞📞📞📞📞📞📞📞📞", url: "https://t.me/+gNZZwOIN72BjYzQ1" },
-        { enabled: true, text: "🎭 📞📞📞📞📞 📞📞📞📞📞📞📞 📞📞📞📞📞📞📞 📞📞📞📞📞📞📞📞📞", url: "https://t.me/EARNING_TEME_bd" }
+        { enabled: true, text: "🔵 𝗕𝗗𝗪𝗜𝗡𝟮𝟰 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 𝗝𝗢𝗜𝗡🎰", url: "https://t.me/+gNZZwOIN72BjYzQ1" },
+        { enabled: true, text: "🟡 𝐃𝐊𝐖𝐈𝐍 𝗢𝗳𝗳𝗶𝗰𝗶𝗮𝗹 𝗖𝗵𝗮𝗻𝗧𝗡𝗘𝗟 𝗝𝗢𝗜𝗡🎰", url: "https://t.me/EARNING_TEME_bd" }
     ]
 };
 
